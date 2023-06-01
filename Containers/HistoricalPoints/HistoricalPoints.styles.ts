@@ -9,5 +9,10 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-    }
+    },
+    container: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: "rgb(97,173,210)"
+    },
 });
