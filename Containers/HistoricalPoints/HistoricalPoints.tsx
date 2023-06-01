@@ -1,4 +1,5 @@
-import { Text, View } from '../../components/Themed';
+import React from "react";
+import { Text, View } from "../../components/Themed";
 import {styles} from "../Home/Home.styles";
 
 
@@ -15,7 +16,7 @@ const HistoricalPoints = () => {
                 </Text>
             </View>
         </View>
-    )
-}
+    );
+};
 
-export default HistoricalPoints
+export default HistoricalPoints;
