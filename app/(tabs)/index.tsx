@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
-import KushkiPoint from '../../Containers/KushkiPoints/KuhskiPoints';
+import Home from '../../Containers/Home/Home';
 import { Text, View } from '../../components/Themed';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <KushkiPoint />
+      <Home />
     </View>
   );
 }

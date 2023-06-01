@@ -1,7 +1,7 @@
 import { Text, View } from '../../components/Themed';
-import {styles} from "./KuhskiPoints.styles"
+import {styles} from "./Home.styles"
 
-const KushkiPoint = () => {
+const Home = () => {
     return (
         <View>
             <Text style={styles.title}>Aqui va el header</Text>
@@ -18,7 +18,4 @@ const KushkiPoint = () => {
 }
 
 
-
-
-
-export default KushkiPoint
+export default Home
