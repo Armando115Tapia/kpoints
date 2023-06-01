@@ -3,7 +3,7 @@ import { Link, Tabs } from "expo-router";
 import { Image, Pressable, useColorScheme } from "react-native";
 import React, { useEffect } from "react";
 
-import Colors, { primaryColor } from "../../constants/Colors";
+import Colors, { primaryColor, styleHeader } from "../../constants/Colors";
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -17,11 +17,6 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const styleHeader = {
-    backgroundColor: primaryColor,
-    borderBottomWidth: 0,
-    shadowColor: "transparent",
-  };
 
   return (
     <Tabs
