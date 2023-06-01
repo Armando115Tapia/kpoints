@@ -1,4 +1,5 @@
-import { Text, View } from '../../components/Themed';
+import React from "react";
+import { Text, View } from "../../components/Themed";
 import {styles} from "../Home/Home.styles";
 import Home from "../Home/Home";
 import TabOneScreen from "../../app/(tabs)";
@@ -10,7 +11,7 @@ const HistoricalPoints = () => {
         <View>
             <HeaderComponent></HeaderComponent>
         </View>
-    )
-}
+    );
+};
 
-export default HistoricalPoints
+export default HistoricalPoints;
