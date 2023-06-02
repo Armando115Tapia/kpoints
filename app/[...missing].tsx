@@ -25,12 +25,11 @@ const styles = StyleSheet.create({
 });
 
 export default function NotFoundScreen({ segment }: { segment: string }) {
-  console.log("segment", segment);
   const router = useRouter();
 
   useEffect(() => {
     setTimeout(() => {
-      router.push("/home");
+      router.replace("/selectMerchant");
     }, 10); // TOOD: remove this timeout
   }, []);
 

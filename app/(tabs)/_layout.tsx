@@ -1,7 +1,13 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
-import { Image, Pressable, useColorScheme } from "react-native";
+import { Link, Tabs, useNavigation } from "expo-router";
+import {
+  Image,
+  Pressable,
+  TouchableOpacity,
+  useColorScheme,
+} from "react-native";
 import React, { useEffect } from "react";
+import { Text } from "../../components/Themed";
 
 import Colors, { primaryColor, styleHeader } from "../../constants/Colors";
 
@@ -17,6 +23,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const navigator = useNavigation();
 
   return (
     <Tabs
@@ -27,47 +34,51 @@ export default function TabLayout() {
       <Tabs.Screen
         name="home"
         options={{
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigator.goBack()}>
+              <Text style={{ marginLeft: 10 }}>Regresar</Text>
+            </TouchableOpacity>
+          ),
           headerStyle: {
             ...styleHeader,
           },
-          title: "Inicio",
+          headerTitle: "",
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? "light"].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+          title: "Inicio",
         }}
       />
       <Tabs.Screen
         name="historicalPoints"
         options={{
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigator.goBack()}>
+              <Text style={{ marginLeft: 10 }}>Regresar</Text>
+            </TouchableOpacity>
+          ),
           headerStyle: {
             ...styleHeader,
           },
-          title: "Historial",
+          headerTitle: "",
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="history" color={color} />
           ),
+          title: "Historial",
         }}
       />
       <Tabs.Screen
         name="prize"
         options={{
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigator.goBack()}>
+              <Text style={{ marginLeft: 10 }}>Regresar</Text>
+            </TouchableOpacity>
+          ),
           headerStyle: {
             ...styleHeader,
           },
-          title: "Premios",
+          headerTitle: "",
           tabBarIcon: ({ color }) => <TabBarIcon name="trophy" color={color} />,
+          title: "Premios",
         }}
       />
     </Tabs>

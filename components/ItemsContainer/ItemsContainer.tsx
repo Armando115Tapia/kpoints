@@ -1,22 +1,13 @@
 import React from "react";
 import { View } from "../Themed";
 import { ScrollView, StyleSheet } from "react-native";
-
-export const ItemsContainer = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {children}
-      </ScrollView>
-    </View>
-  );
-};
+import { isNil, get } from "lodash";
 
 const styles = StyleSheet.create({
   container: {
-    margin: 15,
-    flex: 0.6,
     borderRadius: 40,
+    flex: 0.6,
+    margin: 15,
     overflow: "hidden",
   },
   scrollContainer: {
@@ -24,3 +15,32 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 });
+
+export const ItemsContainer = ({
+  color,
+  children,
+  wrapperStyle,
+}: {
+  children: React.ReactNode;
+  color?: string;
+  wrapperStyle?: boolean;
+}) => {
+  return (
+    <View
+      style={{
+        ...styles.container,
+        backgroundColor: isNil(color) ? "white" : color,
+      }}
+    >
+      <ScrollView
+        contentContainerStyle={{
+          ...styles.scrollContainer,
+          flexWrap: wrapperStyle ? "wrap" : "nowrap",
+          flexDirection: wrapperStyle ? "row" : "column",
+        }}
+      >
+        {children}
+      </ScrollView>
+    </View>
+  );
+};

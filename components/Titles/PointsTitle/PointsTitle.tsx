@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "../../Themed";
+import { Text, View } from "../../Themed";
 import { IPointsTitleProps } from "./PointsTitle.interfaces";
 import { PointsTitleStyles } from "./PointsTitle.styles";
 
