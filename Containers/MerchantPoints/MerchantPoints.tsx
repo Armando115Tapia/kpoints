@@ -28,8 +28,8 @@ export const MerchantPoints = (props: IMerchantPointsProps) => {
             position: "relative",
           }}
         >
-          <ItemsContainer>
-            <SimpleTitle title="Selecciona tu modalidad" />
+          <ItemsContainer color={"#97BBEC"}>
+            <SimpleTitle title="Canjear Puntos" />
             <RedeemItem
               buttonTitle="Quiero mi codigo de descuento"
               navigateTo="/discountCode"

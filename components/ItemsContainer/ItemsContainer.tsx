@@ -1,14 +1,16 @@
 import React from "react";
 import { View } from "../Themed";
 import { ScrollView, StyleSheet } from "react-native";
-import { isNil } from "lodash";
+import { isNil, get } from "lodash";
 
 export const ItemsContainer = ({
   color,
   children,
+  wrapperStyle,
 }: {
   children: React.ReactNode;
   color?: string;
+  wrapperStyle?: boolean;
 }) => {
   return (
     <View
@@ -17,7 +19,13 @@ export const ItemsContainer = ({
         backgroundColor: isNil(color) ? "white" : color,
       }}
     >
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <ScrollView
+        contentContainerStyle={{
+          ...styles.scrollContainer,
+          flexWrap: wrapperStyle ? "wrap" : "nowrap",
+          flexDirection: wrapperStyle ? "row" : "column",
+        }}
+      >
         {children}
       </ScrollView>
     </View>
