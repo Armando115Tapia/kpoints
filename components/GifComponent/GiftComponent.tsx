@@ -34,7 +34,6 @@ export const GiftComponent = ({
           title={`${btnInfo.btnText}`}
           onPress={() =>
             router.push({
-              // TODO validar que redireccione bien
               pathname: btnInfo.pathname,
             })
           }

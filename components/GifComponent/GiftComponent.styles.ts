@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
   title: {
     color: "black",
     fontSize: 30,
-    lineHeight: 24,
     textAlign: "center",
     marginTop: 20,
     marginBottom: 20,
