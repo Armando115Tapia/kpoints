@@ -83,6 +83,17 @@ function RootLayoutNav() {
               headerShadowVisible: false,
             }}
           />
+          <Stack.Screen
+            name="moreInfo"
+            options={{
+              presentation: "modal",
+              headerStyle: {
+                ...styleHeader,
+              },
+              headerTitle: "",
+              headerShadowVisible: false,
+            }}
+          />
         </Stack>
       </ThemeProvider>
     </>
