@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { View, Text } from "../../components/Themed";
+import { Text, View } from "../../components/Themed";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import { MainTitle } from "../../components/Titles/MainTitle/MainTitle";
 import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
@@ -54,9 +54,9 @@ const Home = () => {
         >
           <ScrollView
             style={{
+              backgroundColor: "transparent",
               height: "100%",
               position: "relative",
-              backgroundColor: "transparent",
             }}
             refreshControl={
               <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
@@ -90,9 +90,9 @@ const Home = () => {
       ) : (
         <ScrollView
           style={{
+            backgroundColor: secondaryColor,
             height: "100%",
             position: "relative",
-            backgroundColor: secondaryColor,
           }}
           refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

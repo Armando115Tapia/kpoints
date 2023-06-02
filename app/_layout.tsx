@@ -51,57 +51,57 @@ function RootLayoutNav() {
           <Stack.Screen
             name="selectMerchant"
             options={{
-              headerTitle: "",
-              presentation: "card",
+              headerShadowVisible: false,
               headerStyle: {
                 ...styleHeader,
               },
-              headerShadowVisible: false,
+              headerTitle: "",
+              presentation: "card",
             }}
           />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen
             name="merchantPoints"
             options={{
-              presentation: "modal",
+              headerShadowVisible: false,
               headerStyle: {
                 ...styleHeader,
               },
               headerTitle: "Canjear Puntos",
-              headerShadowVisible: false,
+              presentation: "modal",
             }}
           />
           <Stack.Screen
             name="discountCode"
             options={{
-              presentation: "modal",
+              headerShadowVisible: false,
               headerStyle: {
                 ...styleHeader,
               },
               headerTitle: "Código de Descuento",
-              headerShadowVisible: false,
+              presentation: "modal",
             }}
           />
           <Stack.Screen
             name="cardCharge"
             options={{
-              presentation: "modal",
+              headerShadowVisible: false,
               headerStyle: {
                 ...styleHeader,
               },
               headerTitle: "Código de Descuento",
-              headerShadowVisible: false,
+              presentation: "modal",
             }}
           />
           <Stack.Screen
             name="moreInfo"
             options={{
-              presentation: "modal",
+              headerShadowVisible: false,
               headerStyle: {
                 ...styleHeader,
               },
               headerTitle: "",
-              headerShadowVisible: false,
+              presentation: "modal",
             }}
           />
         </Stack>
