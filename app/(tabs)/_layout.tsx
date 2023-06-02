@@ -27,11 +27,6 @@ export default function TabLayout() {
       <Tabs.Screen
         name="home"
         options={{
-          headerStyle: {
-            ...styleHeader,
-          },
-          title: "Inicio",
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -46,6 +41,11 @@ export default function TabLayout() {
               </Pressable>
             </Link>
           ),
+          headerStyle: {
+            ...styleHeader,
+          },
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          title: "Inicio",
         }}
       />
       <Tabs.Screen
@@ -54,10 +54,10 @@ export default function TabLayout() {
           headerStyle: {
             ...styleHeader,
           },
-          title: "Historial",
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="history" color={color} />
           ),
+          title: "Historial",
         }}
       />
       <Tabs.Screen
@@ -66,8 +66,8 @@ export default function TabLayout() {
           headerStyle: {
             ...styleHeader,
           },
-          title: "Premios",
           tabBarIcon: ({ color }) => <TabBarIcon name="trophy" color={color} />,
+          title: "Premios",
         }}
       />
     </Tabs>
