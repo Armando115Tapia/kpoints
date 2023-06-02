@@ -3,6 +3,19 @@ import { View } from "../Themed";
 import { ScrollView, StyleSheet } from "react-native";
 import { isNil } from "lodash";
 
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 40,
+    flex: 0.6,
+    margin: 15,
+    overflow: "hidden",
+  },
+  scrollContainer: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
+});
+
 export const ItemsContainer = ({
   color,
   children,
@@ -23,16 +36,3 @@ export const ItemsContainer = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    margin: 15,
-    flex: 0.6,
-    borderRadius: 40,
-    overflow: "hidden",
-  },
-  scrollContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-  },
-});
