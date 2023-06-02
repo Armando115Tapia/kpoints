@@ -1,20 +1,17 @@
-import React from "react";
-import { Text, View } from "../../components/Themed";
-import { styles } from "../Home/Home.styles";
+
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import {Text, View} from "../../components/Themed";
 
 const Prize = () => {
-  return (
-    <View>
-      <Text style={styles.title}>Aqui va el header</Text>
-      <View>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)"
-        >
-          Aquí va los premios
-        </Text>
-      </View>
-    </View>
-  );
-};
+    return (
+        <View>
+            <HeaderComponent></HeaderComponent>
+            <View>
+                <Text lightColor="rgba(0,0,0,0.8)" darkColor="rgba(255,255,255,0.8)">
+                    AQUI EMPIEZAS TU A TRABAJAR
+                </Text>
+            </View>
+        </View>
+    )
+}
+export default Prize

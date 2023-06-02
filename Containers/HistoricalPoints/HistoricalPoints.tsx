@@ -1,22 +1,27 @@
 import React from "react";
 import { Text, View } from "../../components/Themed";
-import {styles} from "../Home/Home.styles";
-
+import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
+import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
+import { primaryColor } from "../../constants/Colors";
 
 const HistoricalPoints = () => {
-    return (
-        <View>
-            <Text style={styles.title}>Aqui va el header</Text>
-            <View>
-                <Text
-                    style={styles.getStartedText}
-                    lightColor="rgba(0,0,0,0.8)"
-                    darkColor="rgba(255,255,255,0.8)">
-                   Aquí va la parte historical
-                </Text>
-            </View>
-        </View>
-    );
+  return (
+    <View>
+      <HeaderComponent />
+      <View
+        style={{
+          height: "100%",
+          position: "relative",
+          backgroundColor: primaryColor,
+        }}
+      >
+        <ItemsContainer>
+          <Text>Hola mundo</Text>
+          <Text>Hola mundo</Text>
+        </ItemsContainer>
+      </View>
+    </View>
+  );
 };
 
 export default HistoricalPoints;
