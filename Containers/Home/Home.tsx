@@ -21,18 +21,19 @@ import { useRouter } from "expo-router";
 const Home = () => {
   const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
-  const kPoints = useStore((state) => state.points);
+  const [kPoints, setKPoints] = useState(useStore((state) => state.points));
+
   const isLoading = useStore((state) => state.isLoading);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    await getKPoints();
+    await getKPoints(setKPoints);
     setRefreshing(false);
   }, []);
 
   useEffect(() => {
     if (isEmpty(kPoints)) {
-      getKPoints();
+      getKPoints(setKPoints);
     }
   }, []);
 
@@ -43,33 +44,48 @@ const Home = () => {
         <View
           style={{
             alignItems: "center",
-            backgroundColor: secondaryColor,
+            //  backgroundColor: secondaryColor,
             height: "100%",
             marginVertical: 25,
             position: "relative",
           }}
+          lightColor={secondaryColor}
+          darkColor="black"
         >
-          <Image
-            source={MerchantsLogoPath["empty"]}
-            style={{ height: 300, width: 300 }}
-            resizeMode={"contain"}
-          />
-          <Text
-            style={styles.getStartedText}
-            darkColor="#B3B3B3"
-            lightColor="rgba(255,255,255,0.8)"
+          <ScrollView
+            style={{
+              height: "100%",
+              position: "relative",
+              backgroundColor: "transparent",
+            }}
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
           >
-            Hola Michael! {"\n"} Aún no estás ganando puntos!{"\n"} ¿Quieres
-            empezar a ganar cashback con tus consumos? {"\n"} Más información{" "}
-            <TouchableOpacity
-              onPress={() => router.push({ pathname: "/moreInfo" })}
+            <Image
+              source={MerchantsLogoPath["empty"]}
+              style={{ height: 300, width: 300 }}
+              resizeMode={"contain"}
+            />
+            <Text
+              style={styles.getStartedText}
+              darkColor="white"
+              lightColor="black"
             >
-              <Text style={{ color: "blue", textDecorationLine: "underline" }}>
-                aqui
-              </Text>
-            </TouchableOpacity>
-            .
-          </Text>
+              Hola Michael! {"\n"} Aún no estás ganando puntos!{"\n"} ¿Quieres
+              empezar a ganar cashback con tus consumos? {"\n"} Más información{" "}
+              <TouchableOpacity
+                onPress={() => router.push({ pathname: "/moreInfo" })}
+              >
+                <Text
+                  style={{ color: "blue", textDecorationLine: "underline" }}
+                >
+                  aqui
+                </Text>
+              </TouchableOpacity>
+              .
+            </Text>
+          </ScrollView>
         </View>
       ) : (
         <ScrollView
@@ -94,6 +110,7 @@ const Home = () => {
                 style={{ backgroundColor: "transparent" }}
               >
                 <MerchantPointsItem
+                  merchantId={kPoint.merchantId}
                   merchantName={kPoint.merchantName}
                   points={kPoint.points}
                 />

@@ -5,10 +5,12 @@ export const SimpleTitleStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
+    backgroundColor: "transparent",
   },
   title: {
-    fontSize: 14,
+    fontSize: 20,
     fontWeight: "bold",
     textTransform: "uppercase",
+    backgroundColor: "transparent",
   },
 });

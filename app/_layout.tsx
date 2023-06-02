@@ -18,7 +18,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "(tabs)",
+  initialRouteName: "modal",
 };
 
 export default function RootLayout() {
@@ -47,9 +47,19 @@ function RootLayoutNav() {
   return (
     <>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack>
+        <Stack initialRouteName="(tabs)">
+          <Stack.Screen
+            name="selectMerchant"
+            options={{
+              headerTitle: "",
+              presentation: "card",
+              headerStyle: {
+                ...styleHeader,
+              },
+              headerShadowVisible: false,
+            }}
+          />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: "modal" }} />
           <Stack.Screen
             name="merchantPoints"
             options={{

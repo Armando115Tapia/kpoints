@@ -6,12 +6,15 @@ import { useRouter } from "expo-router";
 import { MerchantsLogoPath } from "../../../constants/MerchantsNames";
 import { MerchantPointsItemStyles } from "./MerchantPointsItem.styles";
 import { MainButton } from "../../Buttons/MainButton/MainButton";
+import { useStore } from "../../../store/bookStore";
 
 export const MerchantPointsItem = ({
+  merchantId,
   merchantName,
   points,
 }: IMerchantPointsItemProps) => {
   const router = useRouter();
+  const setCurrentMerchant = useStore((state) => state.setCurrentMerchant);
 
   return (
     <View style={MerchantPointsItemStyles.container}>
@@ -26,15 +29,16 @@ export const MerchantPointsItem = ({
       <View style={MerchantPointsItemStyles.buttonContainer}>
         <MainButton
           title="Canjear puntos"
-          onPress={() =>
+          onPress={() => {
             router.push({
-              pathname: "/merchantPoints",
+              pathname: "/home",
               params: {
                 merchantName,
                 points,
               },
-            })
-          }
+            });
+            setCurrentMerchant({ merchantId, merchantName, points });
+          }}
         />
       </View>
     </View>

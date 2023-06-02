@@ -7,11 +7,12 @@ import { PointsTitle } from "../../components/Titles/PointsTitle/PointsTitle";
 import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
 import { SimpleTitle } from "../../components/Titles/SimpleTitle/SimpleTitle";
 import { RedeemItem } from "../../components/Items/RedeemItem/RedeemItem";
+import { MerchantsLogoPath } from "../../constants/MerchantsNames";
 
 export const MerchantPoints = (props: IMerchantPointsProps) => {
   return (
     <View>
-      <HeaderComponent />
+      <HeaderComponent srcImage={MerchantsLogoPath[props.merchantName]} />
       <View
         style={{
           height: "100%",

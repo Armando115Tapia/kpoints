@@ -1,12 +1,15 @@
 import React from "react";
 import { Text, View } from "../Themed";
 import HeaderComponent from "../HeaderComponent/HeaderComponent";
-import { secondaryColor } from "../../constants/Colors";
+import { primaryColor, secondaryColor } from "../../constants/Colors";
 import { StyleSheet } from "react-native";
+import { MerchantsLogoPath } from "../../constants/MerchantsNames";
+import { SimpleTitle } from "../Titles/SimpleTitle/SimpleTitle";
+import { isNil } from "lodash";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgb(112,157,236)",
+    backgroundColor: primaryColor,
     borderRadius: 40,
     flex: 0.5,
     justifyContent: "center",
@@ -26,19 +29,29 @@ const styles = StyleSheet.create({
   },
 });
 
-export const MoreInfoComponent = () => {
+export const MoreInfoComponent = ({
+  merchantName,
+}: {
+  merchantName?: string;
+}) => {
   return (
     <View style={{ backgroundColor: secondaryColor }}>
-      <HeaderComponent></HeaderComponent>
+      {!isNil(merchantName) ? (
+        <HeaderComponent srcImage={MerchantsLogoPath[merchantName]} />
+      ) : (
+        <HeaderComponent />
+      )}
+
       <View
         style={{
           alignItems: "center",
           backgroundColor: secondaryColor,
           height: "100%",
-          marginVertical: 25,
+          marginVertical: 10,
           position: "relative",
         }}
       >
+        <SimpleTitle title="Premios" />
         <View style={styles.container}>
           <Text style={styles.text}>
             ¡Obtén Cash-Back del 1% del consumo total en puntos!
