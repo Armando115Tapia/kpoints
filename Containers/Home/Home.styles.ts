@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
     textAlign: "center",
     marginBottom: 20,
+    marginHorizontal: 20,
   },
   title: {
     fontSize: 20,
