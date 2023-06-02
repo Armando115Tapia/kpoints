@@ -14,17 +14,17 @@ export const CardCharge = (props: IDiscountCodeProps) => {
       <HeaderComponent />
       <View
         style={{
+          backgroundColor: secondaryColor,
           height: "100%",
           position: "relative",
-          backgroundColor: secondaryColor,
         }}
       >
         <PointsTitle {...props} />
         <View
           style={{
+            backgroundColor: secondaryColor,
             height: "100%",
             position: "relative",
-            backgroundColor: secondaryColor,
           }}
         >
           <ItemsContainer>
@@ -33,7 +33,7 @@ export const CardCharge = (props: IDiscountCodeProps) => {
               icon={
                 <Image
                   source={require("../../assets/images/cashbacklogo.png")}
-                  style={{ width: 40, height: 40, marginHorizontal: 10 }}
+                  style={{ height: 40, marginHorizontal: 10, width: 40 }}
                   resizeMode={"contain"}
                 />
               }

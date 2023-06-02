@@ -15,17 +15,17 @@ export const MerchantPoints = (props: IMerchantPointsProps) => {
       <HeaderComponent srcImage={MerchantsLogoPath[props.merchantName]} />
       <View
         style={{
+          backgroundColor: secondaryColor,
           height: "100%",
           position: "relative",
-          backgroundColor: secondaryColor,
         }}
       >
         <PointsTitle {...props} />
         <View
           style={{
+            backgroundColor: secondaryColor,
             height: "100%",
             position: "relative",
-            backgroundColor: secondaryColor,
           }}
         >
           <ItemsContainer color={"#97BBEC"}>

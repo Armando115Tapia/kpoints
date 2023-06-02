@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "../../Themed";
+import { Text, View } from "../../Themed";
 import { IMerchantPointsItemProps } from "./MerchantPointsItem.interfaces";
 import { Image } from "react-native";
 import { useRouter } from "expo-router";
@@ -21,7 +21,7 @@ export const MerchantPointsItem = ({
       <View style={MerchantPointsItemStyles.imageContainer}>
         <Image
           source={MerchantsLogoPath[merchantName]}
-          style={{ width: 75, height: 75 }}
+          style={{ height: 75, width: 75 }}
           resizeMode={"contain"}
         />
         <Text>Tienes {points} puntos!</Text>
@@ -31,11 +31,11 @@ export const MerchantPointsItem = ({
           title="Canjear puntos"
           onPress={() => {
             router.push({
-              pathname: "/home",
               params: {
                 merchantName,
                 points,
               },
+              pathname: "/home",
             });
             setCurrentMerchant({ merchantId, merchantName, points });
           }}

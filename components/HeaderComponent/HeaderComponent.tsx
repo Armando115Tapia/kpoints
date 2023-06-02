@@ -1,3 +1,4 @@
+import React from "react";
 import { styles } from "../../Containers/Home/Home.styles";
 import { Image } from "react-native";
 import { Text, View } from "../Themed";
@@ -12,7 +13,7 @@ export const HeaderComponent = ({ srcImage }: { srcImage?: NodeRequire }) => {
             ? require("../../assets/images/maleAvatar.png")
             : srcImage
         }
-        style={{ width: 100, height: 100 }}
+        style={{ height: 100, width: 100 }}
         resizeMode={"contain"}
       />
       {isNil(srcImage) && (
