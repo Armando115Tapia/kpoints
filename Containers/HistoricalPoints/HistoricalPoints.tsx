@@ -1,17 +1,27 @@
 import React from "react";
 import { Text, View } from "../../components/Themed";
-import {styles} from "../Home/Home.styles";
-import Home from "../Home/Home";
-import TabOneScreen from "../../app/(tabs)";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
-
+import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
+import { primaryColor } from "../../constants/Colors";
 
 const HistoricalPoints = () => {
-    return (
-        <View>
-            <HeaderComponent></HeaderComponent>
-        </View>
-    );
+  return (
+    <View>
+      <HeaderComponent />
+      <View
+        style={{
+          height: "100%",
+          position: "relative",
+          backgroundColor: primaryColor,
+        }}
+      >
+        <ItemsContainer>
+          <Text>Hola mundo</Text>
+          <Text>Hola mundo</Text>
+        </ItemsContainer>
+      </View>
+    </View>
+  );
 };
 
 export default HistoricalPoints;
