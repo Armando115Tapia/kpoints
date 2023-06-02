@@ -17,6 +17,7 @@ import { Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { styles } from "./Home.styles";
 import { useRouter } from "expo-router";
+import { IconButton } from "../../components/Buttons/IconButton/IconButton";
 
 const Home = () => {
   const router = useRouter();
@@ -98,9 +99,9 @@ const Home = () => {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }
         >
-          <MainTitle title="¡FELICIDADES!" subtitle="" divider />
+          <MainTitle title="Selecciona el comercio: " subtitle="" divider />
 
-          <ItemsContainer color={"#97BBEC"}>
+          <ItemsContainer color={"#97BBEC"} wrapperStyle>
             {isLoading && isEmpty(kPoints) && (
               <ActivityIndicator color="grey" size={30} />
             )}
@@ -109,7 +110,7 @@ const Home = () => {
                 key={kPoint.merchantName}
                 style={{ backgroundColor: "transparent" }}
               >
-                <MerchantPointsItem
+                <IconButton
                   merchantId={kPoint.merchantId}
                   merchantName={kPoint.merchantName}
                   points={kPoint.points}

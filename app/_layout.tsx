@@ -89,7 +89,7 @@ function RootLayoutNav() {
               headerStyle: {
                 ...styleHeader,
               },
-              headerTitle: "Código de Descuento",
+              headerTitle: "Pago Tarjeta",
               headerShadowVisible: false,
             }}
           />
