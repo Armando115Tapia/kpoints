@@ -1,14 +1,14 @@
 import React from "react";
 import { Text, View } from "../../components/Themed";
-import { IMerchantPointsProps } from "./MerchantPoints.interfaces";
+import { IDiscountCodeProps } from "../DiscountCode/DiscountCode.interfaces";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
-import { primaryColor, secondaryColor } from "../../constants/Colors";
+import { secondaryColor } from "../../constants/Colors";
 import { PointsTitle } from "../../components/Titles/PointsTitle/PointsTitle";
 import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
 import { SimpleTitle } from "../../components/Titles/SimpleTitle/SimpleTitle";
-import { RedeemItem } from "../../components/Items/RedeemItem/RedeemItem";
+import { Image } from "react-native";
 
-export const MerchantPoints = (props: IMerchantPointsProps) => {
+export const CardCharge = (props: IDiscountCodeProps) => {
   return (
     <View>
       <HeaderComponent />
@@ -28,18 +28,15 @@ export const MerchantPoints = (props: IMerchantPointsProps) => {
           }}
         >
           <ItemsContainer>
-            <SimpleTitle title="Selecciona tu modalidad" />
-            <RedeemItem
-              buttonTitle="Quiero mi codigo de descuento"
-              navigateTo="/discountCode"
-              merchantName={props.merchantName}
-              points={props.points}
-            />
-            <RedeemItem
-              buttonTitle="Quiero hacer el pago a mi TC"
-              navigateTo="/cardCharge"
-              merchantName={props.merchantName}
-              points={props.points}
+            <SimpleTitle
+              title="Cashback disponible"
+              icon={
+                <Image
+                  source={require("../../assets/images/cashbacklogo.png")}
+                  style={{ width: 40, height: 40, marginHorizontal: 10 }}
+                  resizeMode={"contain"}
+                />
+              }
             />
           </ItemsContainer>
         </View>

@@ -1,14 +1,13 @@
 import React from "react";
 import { Text, View } from "../../components/Themed";
-import { IMerchantPointsProps } from "./MerchantPoints.interfaces";
+import { IDiscountCodeProps } from "./DiscountCode.interfaces";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
-import { primaryColor, secondaryColor } from "../../constants/Colors";
+import { secondaryColor } from "../../constants/Colors";
 import { PointsTitle } from "../../components/Titles/PointsTitle/PointsTitle";
 import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
 import { SimpleTitle } from "../../components/Titles/SimpleTitle/SimpleTitle";
-import { RedeemItem } from "../../components/Items/RedeemItem/RedeemItem";
 
-export const MerchantPoints = (props: IMerchantPointsProps) => {
+export const DiscountCode = (props: IDiscountCodeProps) => {
   return (
     <View>
       <HeaderComponent />
@@ -28,19 +27,7 @@ export const MerchantPoints = (props: IMerchantPointsProps) => {
           }}
         >
           <ItemsContainer>
-            <SimpleTitle title="Selecciona tu modalidad" />
-            <RedeemItem
-              buttonTitle="Quiero mi codigo de descuento"
-              navigateTo="/discountCode"
-              merchantName={props.merchantName}
-              points={props.points}
-            />
-            <RedeemItem
-              buttonTitle="Quiero hacer el pago a mi TC"
-              navigateTo="/cardCharge"
-              merchantName={props.merchantName}
-              points={props.points}
-            />
+            <SimpleTitle title="Elije tu cupón" />
           </ItemsContainer>
         </View>
       </View>

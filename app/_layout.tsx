@@ -57,7 +57,29 @@ function RootLayoutNav() {
               headerStyle: {
                 ...styleHeader,
               },
-              headerTitle: "Puntos de venta",
+              headerTitle: "Canjear Puntos",
+              headerShadowVisible: false,
+            }}
+          />
+          <Stack.Screen
+            name="discountCode"
+            options={{
+              presentation: "modal",
+              headerStyle: {
+                ...styleHeader,
+              },
+              headerTitle: "Código de Descuento",
+              headerShadowVisible: false,
+            }}
+          />
+          <Stack.Screen
+            name="cardCharge"
+            options={{
+              presentation: "modal",
+              headerStyle: {
+                ...styleHeader,
+              },
+              headerTitle: "Código de Descuento",
               headerShadowVisible: false,
             }}
           />

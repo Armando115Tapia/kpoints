@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text } from "../Themed";
+import { View, Text } from "../../Themed";
 import { IMerchantPointsItemProps } from "./MerchantPointsItem.interfaces";
 import { Image } from "react-native";
 import { useRouter } from "expo-router";
-import { MerchantsLogoPath } from "../../constants/MerchantsNames";
+import { MerchantsLogoPath } from "../../../constants/MerchantsNames";
 import { MerchantPointsItemStyles } from "./MerchantPointsItem.styles";
-import { MainButton } from "../Buttons/MainButton/MainButton";
+import { MainButton } from "../../Buttons/MainButton/MainButton";
 
 export const MerchantPointsItem = ({
   merchantName,

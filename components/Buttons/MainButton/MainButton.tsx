@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { View, Text } from "../../Themed";
-import { MerchantPointsItemStyles } from "../../MerchantPointsItem/MerchantPointsItem.styles";
+import { MerchantPointsItemStyles } from "../../Items/MerchantPointsItem/MerchantPointsItem.styles";
 import { IMainButtonProps } from "./MainButton.interfaces";
 
 export const MainButton = ({ title, onPress }: IMainButtonProps) => {

@@ -4,6 +4,7 @@ export const SimpleTitleStyles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "row",
   },
   title: {
     fontSize: 14,

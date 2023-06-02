@@ -16,7 +16,9 @@ export const MerchantPointsItemStyles = StyleSheet.create({
   button: {
     justifyContent: "center",
     alignItems: "center",
+    textAlign: "center",
     height: 50,
+    maxWidth: "90%",
     paddingHorizontal: 20,
     borderRadius: 40,
     backgroundColor: "#E4CCFF",

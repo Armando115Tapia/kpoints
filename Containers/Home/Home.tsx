@@ -3,7 +3,7 @@ import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import { MainTitle } from "../../components/Titles/MainTitle/MainTitle";
 import { ItemsContainer } from "../../components/ItemsContainer/ItemsContainer";
 import { secondaryColor } from "../../constants/Colors";
-import { MerchantPointsItem } from "../../components/MerchantPointsItem/MerchantPointsItem";
+import { MerchantPointsItem } from "../../components/Items/MerchantPointsItem/MerchantPointsItem";
 import { MerchantsNames } from "../../constants/MerchantsNames";
 
 const Home = () => {
