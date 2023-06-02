@@ -34,51 +34,51 @@ export default function TabLayout() {
       <Tabs.Screen
         name="home"
         options={{
-          headerStyle: {
-            ...styleHeader,
-          },
-          headerTitle: "",
-          title: "Inicio",
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigator.goBack()}>
               <Text style={{ marginLeft: 10 }}>Regresar</Text>
             </TouchableOpacity>
           ),
+          headerStyle: {
+            ...styleHeader,
+          },
+          headerTitle: "",
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          title: "Inicio",
         }}
       />
       <Tabs.Screen
         name="historicalPoints"
         options={{
-          headerStyle: {
-            ...styleHeader,
-          },
-          headerTitle: "",
-          title: "Historial",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="history" color={color} />
-          ),
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigator.goBack()}>
               <Text style={{ marginLeft: 10 }}>Regresar</Text>
             </TouchableOpacity>
           ),
+          headerStyle: {
+            ...styleHeader,
+          },
+          headerTitle: "",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="history" color={color} />
+          ),
+          title: "Historial",
         }}
       />
       <Tabs.Screen
         name="prize"
         options={{
-          headerStyle: {
-            ...styleHeader,
-          },
-          headerTitle: "",
-          title: "Premios",
-          tabBarIcon: ({ color }) => <TabBarIcon name="trophy" color={color} />,
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigator.goBack()}>
               <Text style={{ marginLeft: 10 }}>Regresar</Text>
             </TouchableOpacity>
           ),
+          headerStyle: {
+            ...styleHeader,
+          },
+          headerTitle: "",
+          tabBarIcon: ({ color }) => <TabBarIcon name="trophy" color={color} />,
+          title: "Premios",
         }}
       />
     </Tabs>

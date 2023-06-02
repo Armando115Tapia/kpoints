@@ -11,4 +11,5 @@ const Prize = () => {
     </View>
   );
 };
+
 export default Prize;
