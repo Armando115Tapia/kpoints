@@ -43,12 +43,15 @@ const Home = () => {
       >
         <MainTitle title="¡FELICIDADES!" subtitle="" divider />
 
-        <ItemsContainer>
+        <ItemsContainer color={"#97BBEC"}>
           {isLoading && isEmpty(kPoints) && (
             <ActivityIndicator color="grey" size={30} />
           )}
           {kPoints.map((kPoint) => (
-            <View key={kPoint.merchantName}>
+            <View
+              key={kPoint.merchantName}
+              style={{ backgroundColor: "transparent" }}
+            >
               <MerchantPointsItem
                 merchantName={kPoint.merchantName}
                 points={kPoint.points}
